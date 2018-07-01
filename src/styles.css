@@ -104,8 +104,7 @@ h6 {
 }
 
 p {
-    margin-top: 0;
-    margin-bottom: 1rem
+    margin: 0
 }
 
 abbr[data-original-title],
@@ -465,7 +464,7 @@ hr {
 
 .small,
 small {
-    font-size: 80%;
+    font-size: 70%;
     font-weight: 400
 }
 
@@ -4651,11 +4650,8 @@ tbody.collapse.show {
 
 .card {
     position: relative;
-    display: -webkit-box;
     display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
+    display: inline-block;
     -ms-flex-direction: column;
     flex-direction: column;
     min-width: 0;
@@ -4663,7 +4659,7 @@ tbody.collapse.show {
     background-color: #fff;
     background-clip: border-box;
     border: 1px solid rgba(0, 0, 0, .125);
-    border-radius: .25rem
+    border-radius: .25rem;
 }
 
 .card>hr {
@@ -9336,3 +9332,15 @@ em::after {
     margin: 0 0.6em;
     font-size: 34px;
 }
+
+a.menu-link {
+    cursor: pointer;
+}
+
+a.menu-link:hover,
+a.menu-link.active {
+    border-bottom: 3px solid #f706b8;
+    text-decoration: none;
+}
+
+;
