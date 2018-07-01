@@ -3,6 +3,8 @@ import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 import { HomeComponent } from 'app/home/home.component';
 import { AboutComponent } from 'app/about/about.component';
 import { ContactComponent } from 'app/contact/contact.component';
+import { ProductComponent } from 'app/product/product.component';
+
 
 
 
@@ -11,6 +13,7 @@ const ROUTES: Routes = [
   { path: 'home', component: HomeComponent},
   { path: 'about', component: AboutComponent},
   { path: 'contact', component: ContactComponent},
+  { path: 'product/:id',component: ProductComponent},
   { path: '**', redirectTo: 'home' }
 ];
 

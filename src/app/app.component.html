@@ -1,4 +1,4 @@
-<header>
+<!-- <header>
     <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
         <em>SRKK</em>
 
@@ -6,15 +6,28 @@
             <li *ngFor="let m of topMenu let i=index">
                 <a (click)="makeActive(i,m.Url)" class="text-white menu-link {{m.isActive?'active':''}}">{{m.Name}}</a>
             </li>
-            <!-- <li><a (click)="" class="text-white menu-link {{page=='home'?'active':''}}">Home</a></li>
-            <li><a [routerLink]="['/about']" class="text-white menu-link {{page=='about'?'active':''}}">About Us</a></li>
-            <li><a [routerLink]="['/contact']" class="text-white menu-link {{page=='contact'?'active':''}}">Contact</a></li> -->
         </ul>
     </nav>
-</header>
+</header> -->
+<nav class="navbar navbar-expand-lg navbar-light">
+    <em>SRKK</em>
+    <button class="navbar-toggler" type="button" (click)="toggleMenu()">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    <div class="navbar-collapse {{collapse}}" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+            <!-- <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link" href="#">Features</a>
+            <a class="nav-item nav-link" href="#">Pricing</a>
+            <a class="nav-item nav-link disabled" href="#">Disabled</a> -->
+            <a *ngFor="let m of topMenu let i=index" (click)="makeActive(i,m.Url)" class="text-white menu-link {{m.isActive?'active':''}}">{{m.Name}}</a>
+        </div>
+    </div>
+</nav>
+
 <router-outlet></router-outlet>
-<footer style="padding: 14px;">
-    <div class="container-fluid">
-        &copy; SRKK
+<footer style="padding: 14px; color:#fff;">
+    <div class="container-fluid text-center">
+        &copy; SRKK 2018
     </div>
 </footer>

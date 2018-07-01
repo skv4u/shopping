@@ -7,12 +7,16 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  topMenu : any[] = [
-    {"Name":"Home","Url":"/home","isActive":true},
-    {"Name":"About","Url":"/about","isActive":false},
-    {"Name":"Contact","Url":"/contact","isActive":false}
-  ];
+  
+  topMenu : any[] = [];
+  collapse: string = 'collapse';
   constructor(public router: Router){
+    let page = window.location.hash.substring(2);
+    this.topMenu = [
+      {"Name":"Home","Url":"/home","isActive":page == 'home'},
+      {"Name":"About","Url":"/about","isActive":page == 'about'},
+      {"Name":"Contact","Url":"/contact","isActive":page == 'contact'}
+    ]
   }
   makeActive(index:number,Url:string){
     for(let m in this.topMenu){
@@ -20,6 +24,9 @@ export class AppComponent {
     }
     this.topMenu[index].isActive = true
     this.router.navigate([Url]);
+  }
+  toggleMenu(){
+    this.collapse = this.collapse == 'collapse' ? '' : 'collapse';
   }
 }
 
