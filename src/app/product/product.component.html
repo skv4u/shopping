@@ -1,5 +1,5 @@
 <main role="main" class="bg-light" style="padding: 76px 0;">
-    <app-cart-top price="0" quantity="0"></app-cart-top>
+    <app-cart-top *ngIf="updateTopCart"></app-cart-top>
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-12 col-md-5">
@@ -10,7 +10,7 @@
                 <small>₹ {{productData.Price}}</small>
                 <p class="description">{{productData.Description}}</p>
                 <p class="description">{{productData.Description1}}</p>
-                <button class="btn btn-primary">Add to cart</button>
+                <button class="btn btn-primary" (click)="addToCart(productIndex)">Add to cart</button>
             </div>
         </div>
     </div>

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonService } from './../shared/common.service';
-import { Router } from '@angular/router'
-import { shopping } from './../model/model'
+import { Router } from '@angular/router';
+import { shopping } from './../model/model';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',

@@ -1,3 +1,4 @@
-<div class="cart"> {{total}} Cart ₹ {{price}}
+<div class="cart">
+    <div (click)="routeToCheckout()">{{total}} Cart ₹ {{price}}</div>
     <span (click)="clearCart()" class="clear" title="Clear Cart">X</span>
 </div>

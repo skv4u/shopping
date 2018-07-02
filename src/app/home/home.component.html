@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-sm-6 col-md-3" *ngFor="let m of list; let i=index">
                 <div class="card mb-3 box-shadow" style="cursor:pointer" (click)="productTarget(i,$event)">
-                    <img class="card-img-top" [src]="thumbPath + m.Image" alt="Card image cap">
+                    <img class="card-img-top" [src]="thumbPath + m.Image" [alt]="m.Title">
                     <div class="card-body">
                         <button type="button" class="btn btn-sm btn-primary addcartplus">+</button>
                         <p class="card-text">{{m.Title}}</p>

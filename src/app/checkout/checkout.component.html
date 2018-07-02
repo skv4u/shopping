@@ -1,0 +1,48 @@
+<main role="main" class="bg-light" style="padding: 76px 0;">
+    <!-- <app-cart-top *ngIf="updateTopCart"></app-cart-top> -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 text-center">
+                <h3>Shopping Cart</h3>
+            </div>
+            <div class="col-sm-12 col-md-12">
+                <table class="table">
+                    <tr>
+                        <th></th>
+                        <th>Product</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                    </tr>
+                    <tr *ngFor="let m of checkoutList; let i=index">
+                        <td><a href="#" (click)="$event.preventDefault();removeFromList(i)">Remove</a> </td>
+                        <td>
+                            <a [routerLink]="'/product/'+m.ID"><img style="width:70px" [src]="thumbPath + m.Image" [alt]="m.Title" [title]="m.Title"></a>
+                        </td>
+                        <td>₹ {{m.Price}}</td>
+                        <td><input type="number" class="form-control" style="width:80px;" min="1" max="500" [(ngModel)]="m.Quantity" (change)="updateTotal()"></td>
+                        <td>₹ {{m.Quantity * m.Price}}</td>
+
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><b>SubTotal</b></td>
+                        <td> ₹ {{subTotal}}</td>
+
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td> <button class="btn btn-warning">Place Order</button></td>
+
+                    </tr>
+                </table>
+            </div>
+
+        </div>
+    </div>
+</main>
