@@ -18,31 +18,19 @@ export class ProductComponent implements OnInit {
   
   constructor(public commonService:CommonService) { }
 
-  ngOnInit() {
-    
+  ngOnInit() {    
     this.productIndex = Number(window.location.hash.substring(window.location.hash.lastIndexOf('/')+1));
     this.commonService.ListData().subscribe(
       data => {
-        
-        // for(let m of data){
-        //   if(m.ID == this.productID){
-        //     this.productData = m;
-        //     break;
-        //   }
-        // }
         this.list = data;
         this.productData = data[this.productIndex]
-        // console.log(this.productData);
-      }
-    
+      }    
     )
   }
   addToCart(index: number) {
     let selectedList = this.commonService.getProductDetail();
-    // console.log(selectedList);
     if (selectedList == undefined || selectedList == null) {
-      let addtocart = [
-        {
+      let addtocart = [{
           "ID": this.list[index].ID,
           "Quantity": 1,
           "Price": this.list[index].Price
@@ -58,7 +46,6 @@ export class ProductComponent implements OnInit {
           flag = true;
           break;
         }
-
       }
       if (!flag) {
         let addtocart =
@@ -80,7 +67,4 @@ export class ProductComponent implements OnInit {
       this.updateTopCart = true;
     }, 200)
   }
-
-  
-
 }

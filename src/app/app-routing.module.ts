@@ -5,6 +5,7 @@ import { AboutComponent } from 'app/about/about.component';
 import { ContactComponent } from 'app/contact/contact.component';
 import { ProductComponent } from 'app/product/product.component';
 import { CheckoutComponent } from 'app/checkout/checkout.component';
+import { OrderPlaceComponent } from 'app/order-place/order-place.component';
 
 
 const ROUTES: Routes = [
@@ -14,6 +15,7 @@ const ROUTES: Routes = [
   { path: 'contact', component: ContactComponent},
   { path: 'product/:id',component: ProductComponent},
   {path: 'checkout', component: CheckoutComponent},
+  {path: 'order-place', component: OrderPlaceComponent},
   { path: '**', redirectTo: 'home' }
 ];
 
