@@ -20,11 +20,21 @@
             <a class="nav-item nav-link" href="#">Features</a>
             <a class="nav-item nav-link" href="#">Pricing</a>
             <a class="nav-item nav-link disabled" href="#">Disabled</a> -->
-            <a *ngFor="let m of topMenu let i=index" (click)="makeActive(i,m.Url)" class="text-white menu-link {{m.isActive?'active':''}}">{{m.Name}}</a>
+            <a *ngFor="let m of topMenu let i=index" (click)="makeActive(i,m.Url)" class="menu-link {{m.isActive?'active':''}}">{{m.Name}}</a>
         </div>
     </div>
 </nav>
+<div class="main-box">
+    <h2 class="text-center">Srabostir Karukarjo</h2>
+    <img src="./assets/images/logo1.jpg" style="
+    height: 228px;
+    padding: 17px;
+    position: absolute;
+    top: 45px;
+">
 
+
+</div>
 <router-outlet></router-outlet>
 <footer style="padding: 14px; color:#fff;width: 100%; background-color: #007bff;">
     <div class="container-fluid text-center">
