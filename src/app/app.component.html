@@ -10,33 +10,36 @@
     </nav>
 </header> -->
 <nav class="navbar navbar-expand-lg navbar-light">
-    <em>SRKK</em>
+    <!-- <em>SRKK</em> -->
     <button class="navbar-toggler" type="button" (click)="toggleMenu()">
           <span class="navbar-toggler-icon"></span>
         </button>
     <div class="navbar-collapse {{collapse}}" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-            <!-- <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-            <a class="nav-item nav-link" href="#">Features</a>
-            <a class="nav-item nav-link" href="#">Pricing</a>
-            <a class="nav-item nav-link disabled" href="#">Disabled</a> -->
             <a *ngFor="let m of topMenu let i=index" (click)="makeActive(i,m.Url)" class="menu-link {{m.isActive?'active':''}}">{{m.Name}}</a>
         </div>
     </div>
 </nav>
-<div class="main-box">
-    <h2 class="text-center">Srabostir Karukarjo</h2>
-    <img src="./assets/images/logo1.jpg" style="
+<div class="main-box text-center">
+    <em>
+    <h2 style="display: inline;">
+
+        <span style="color: #c31616;">Srabostir</span>
+        <span style="color: #dea914;">Karukarjo</span>
+    </h2>
+</em>
+    <!-- <img src="./assets/images/logo1.jpg" style="
     height: 228px;
     padding: 17px;
     position: absolute;
     top: 45px;
-">
+"> -->
+
 
 
 </div>
 <router-outlet></router-outlet>
-<footer style="padding: 14px; color:#fff;width: 100%; background-color: #007bff;">
+<footer style="padding: 14px; color:#fff;width: 100%; background-color: #e1e1df;">
     <div class="container-fluid text-center">
         &copy; SRKK 2018
     </div>

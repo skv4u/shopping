@@ -1,4 +1,4 @@
-<main role="main" class="bg-light" style="padding: 76px 0;">
+<main role="main" class="bg-light main-top">
     <app-cart-top *ngIf="updateTopCart"></app-cart-top>
     <div class="container-fluid">
         <div class="row">
@@ -6,9 +6,16 @@
                 <div class="alert alert-success text-center">Thank you for placing order</div>
             </div>
             <div class="col-sm-12 col-md-6">
-                <input type="text" placeholder="Name" class="form-control"><br>
-                <input type="text" placeholder="Mobile" class="form-control"><br>
-                <textarea class="form-control" rows="5" placeholder="Address"></textarea><br>
+                <input type="text" [(ngModel)]="user.name" placeholder="Name" class="form-control">
+                <!-- <span class="text-danger">Name is Required</span> -->
+                <br>
+                <input type="text" [(ngModel)]="user.email" placeholder="Email" class="form-control">
+                <br>
+
+                <input type="text" [(ngModel)]="user.mobile" placeholder="Mobile" class="form-control">
+                <!-- <span class="text-danger">Invalid Mobile</span> -->
+                <br>
+                <textarea class="form-control" [(ngModel)]="user.address" rows="5" placeholder="Address"></textarea><br>
                 <button class="btn btn-primary">Order Confirmation</button>
                 <button class="btn btn-default" routerLink="/home">Continue to shop</button>
 
@@ -17,6 +24,7 @@
                 <table class="table">
                     <tr>
                         <th>Product</th>
+                        <th>Title</th>
                         <th>Price</th>
                         <th>Quantity</th>
                         <th>Total</th>
@@ -26,11 +34,13 @@
                         <td>
                             <a [routerLink]="'/product/'+m.ID"><img style="width:70px" [src]="thumbPath + m.Image" [alt]="m.Title" [title]="m.Title"></a>
                         </td>
+                        <td>{{m.Title}}</td>
                         <td>₹ {{m.Price}}</td>
                         <td>{{m.Quantity}}</td>
                         <td>₹ {{m.Quantity * m.Price}}</td>
                     </tr>
                     <tr>
+                        <td></td>
                         <td></td>
                         <td></td>
                         <td><b>SubTotal</b></td>

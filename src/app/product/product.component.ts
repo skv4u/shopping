@@ -19,13 +19,23 @@ export class ProductComponent implements OnInit {
   constructor(public commonService:CommonService) { }
 
   ngOnInit() {    
-    this.productIndex = Number(window.location.hash.substring(window.location.hash.lastIndexOf('/')+1));
+    let productCode = window.location.hash.substring(window.location.hash.lastIndexOf('/')+1);
     this.commonService.ListData().subscribe(
       data => {
         this.list = data;
-        this.productData = data[this.productIndex]
+        let x:any = this.product(productCode);
+        this.productData = x.Data;
+        this.productIndex = x.Index;
       }    
     )
+  }
+  product(code:string){
+    for(let m in this.list){
+      if(this.list[m].Code == code){
+        return {"Index":Number(m),"Data":this.list[m]};
+      }
+    }
+    return null;
   }
   addToCart(index: number) {
     let selectedList = this.commonService.getProductDetail();

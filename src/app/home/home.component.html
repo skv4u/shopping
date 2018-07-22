@@ -1,10 +1,20 @@
+<div class="search">
+    <input type="text" class="form-control" id="search-input" [(ngModel)]="searchText" placeholder="Search..." autocomplete="off" (keyup.enter)="searchProduct()">
+
+    <button class="btn btn-warning btn-outline" type="button" name="searchText" style="display: inline; float: right; margin-top: -37px;" (click)="searchProduct()">Search</button>
+
+
+</div>
+<ul class="text-center" style="margin-top: -45px;margin-bottom: 35px;">
+    <li *ngFor="let m of categoryList"><a href="#" (click)="categoryFilter(m)">{{m}}</a></li>
+</ul>
 <main role="main" class="bg-light">
     <app-cart-top *ngIf="updateTopCart"></app-cart-top>
     <div class="container-fluid">
 
-        <div class="row">
+        <div class="row" *ngIf="list.length">
             <div class="col-sm-6 col-md-3" *ngFor="let m of list; let i=index">
-                <div class="card mb-3 box-shadow" style="cursor:pointer" (click)="productTarget(i,$event)">
+                <div class="card mb-3 box-shadow" style="cursor:pointer" (click)="productTarget(m.Code,$event)">
                     <img class="card-img-top" [src]="thumbPath + m.Image" [alt]="m.Title">
                     <div class="card-body">
                         <button type="button" class="btn btn-sm btn-primary addcartplus">+</button>
@@ -17,5 +27,11 @@
                 </div>
             </div>
         </div>
+        <div class="row text-center" *ngIf="!list.length">
+
+            <div style="width: 100%; margin-bottom: 80px; padding-top:  10px; color: #999;">Oops!!! No matches found...</div>
+
+        </div>
+
     </div>
 </main>

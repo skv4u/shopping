@@ -37,6 +37,7 @@ export class CheckoutComponent implements OnInit {
       if (currentObject) {
         this.checkoutList.push({
           "ID": currentObject.ID,
+          "Code":currentObject.Code,
           "Title": currentObject.Title,
           "Image": currentObject.Image,
           "Price": currentObject.Price,

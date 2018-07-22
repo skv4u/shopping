@@ -15,6 +15,12 @@ export class OrderPlaceComponent implements OnInit {
   updateTopCart: boolean = true;
   checkoutList: any[] = [];
   subTotal: number = 0;
+  user:any = {
+    "name":"",
+    "email":"",
+    "mobile":"",
+    "address":""
+    }
   constructor(public commonService: CommonService) { }
  
   ngOnInit() {
@@ -33,6 +39,7 @@ export class OrderPlaceComponent implements OnInit {
       if (currentObject) {
         this.checkoutList.push({
           "ID": currentObject.ID,
+          "Code": currentObject.Code,
           "Title": currentObject.Title,
           "Image": currentObject.Image,
           "Price": currentObject.Price,

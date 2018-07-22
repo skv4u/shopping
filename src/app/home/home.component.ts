@@ -11,35 +11,48 @@ import { shopping } from './../model/model';
 })
 export class HomeComponent implements OnInit {
 
-
+  categoryList:string[]=["All","Necklaces","Earrings","Other","Sale"]
   list: shopping[] = [];
   thumbPath: string = './assets/images/thumb/';
   largePath: string = './assets/images/large/';
   updateTopCart: boolean = true;
+  tempStorage:shopping[]=[];
+  searchText:string='';
   constructor(public commonService: CommonService,
     public router: Router) {
 
   }
 
+
   ngOnInit() {
     this.commonService.ListData().subscribe(
       data => {
         this.list = data;
+        this.tempStorage = data;
       }
     )
   }
-  productTarget(index: number, elem: any) {
+  product(code:string){
+    for(let m in this.list){
+      if(this.list[m].Code == code){
+        return {"Index":Number(m),"Data":this.list[m]};
+      }
+    }
+    return null;
+  }
+  productTarget(code: string, elem: any) {
     // console.log(elem.target.tagName);
     if (elem.target.tagName.toLowerCase() == 'button') {
-      this.addToCart(index);
+      let index:any = this.product(code);
+      this.addToCart(index.Index);
     }
     else {
-      this.router.navigate(['/product/' + index]);
+      this.router.navigate(['/product/' + code]);
     }
   }
   addToCart(index: number) {
     let selectedList = this.commonService.getProductDetail();
-    // console.log(selectedList);
+    console.log(selectedList);
     if (selectedList == undefined || selectedList == null) {
       let addtocart = [
         {
@@ -88,6 +101,23 @@ export class HomeComponent implements OnInit {
       }
     }
     return null;
+  }
+  categoryFilter(category:string){
+    if(category == 'All'){
+      this.list = JSON.parse(JSON.stringify(this.tempStorage));
+    }
+    else {
+      this.list = this.tempStorage.filter((v)=>{
+        return v.Category == category
+      });
+
+    }
+  }
+  searchProduct(){
+    // console.log(this.searchText)
+    this.list = this.tempStorage.filter((v)=>{
+      return v.Title.toLowerCase().indexOf(this.searchText.toLowerCase()) != -1
+    });
   }
 
 }

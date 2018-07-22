@@ -1,0 +1,15 @@
+.search {
+    position: fixed;
+    width: 280px;
+    top: 5px;
+    z-index: 1006;
+    left: 310px;
+}
+
+@media (max-width:576px) {
+    .search {
+        top: -3px;
+        left: 60px;
+        width: 170px
+    }
+}

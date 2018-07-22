@@ -1,15 +1,22 @@
-<main role="main" class="bg-light" style="padding: 76px 0;">
+<main role="main" class="bg-light main-top">
     <!-- <app-cart-top *ngIf="updateTopCart"></app-cart-top> -->
     <div class="container-fluid">
         <div class="row">
-            <div class="col-sm-12 col-md-12 text-center">
+            <!-- <div class="col-sm-12 col-md-12 text-center">
                 <h3>Shopping Cart</h3>
-            </div>
+            </div> -->
             <div class="col-sm-12 col-md-12">
                 <table class="table">
                     <tr>
+                        <td colspan="5" class="text-center">
+                            <h3>Shopping Cart</h3>
+                        </td>
+                        <td> <button routerLink="/order-place" class="btn btn-warning">Place Order</button></td>
+                    </tr>
+                    <tr>
                         <th></th>
                         <th>Product</th>
+                        <th>Title</th>
                         <th>Price</th>
                         <th>Quantity</th>
                         <th>Total</th>
@@ -19,6 +26,7 @@
                         <td>
                             <a [routerLink]="'/product/'+m.ID"><img style="width:70px" [src]="thumbPath + m.Image" [alt]="m.Title" [title]="m.Title"></a>
                         </td>
+                        <td>{{m.Title}} ({{m.Code}})</td>
                         <td>₹ {{m.Price}}</td>
                         <td><input type="number" class="form-control" style="width:80px;" min="1" max="500" [(ngModel)]="m.Quantity" (change)="updateTotal()"></td>
                         <td>₹ {{m.Quantity * m.Price}}</td>
@@ -28,10 +36,12 @@
                         <td></td>
                         <td></td>
                         <td></td>
+                        <td></td>
                         <td><b>SubTotal</b></td>
                         <td> ₹ {{subTotal}}</td>
                     </tr>
                     <tr>
+                        <td></td>
                         <td></td>
                         <td></td>
                         <td></td>
