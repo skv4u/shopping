@@ -5,13 +5,21 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class CommonService {
   
-
+  baseURL:string = 'http://srkk.co.in/sample.php';
   constructor(private http: Http) { }
 
   public ListData() {
     return this.http.get('./assets/data.json').map(res => res.json());
   }
-  
+   // method post
+   postMethod(data) {
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    headers.append('Accept', 'application/json');
+   
+    return this.http.post(this.baseURL, data, { headers: headers })
+      .map(res => res.json());
+  }
   setProductDetail(json) {
     localStorage.setItem('prod', JSON.stringify(json));
   }

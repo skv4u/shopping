@@ -2,10 +2,11 @@
     <app-cart-top *ngIf="updateTopCart"></app-cart-top>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-sm-12 col-md-12">
+            <div class="col-sm-12 col-md-12" *ngIf="orderSuccess">
                 <div class="alert alert-success text-center">Thank you for placing order</div>
             </div>
-            <div class="col-sm-12 col-md-6">
+            <div class="col-sm-12 col-md-6" *ngIf="!orderSuccess">
+                <div class="alert alert-danger" *ngIf="validForm">{{validationMessage}}</div>
                 <input type="text" [(ngModel)]="user.name" placeholder="Name" class="form-control">
                 <!-- <span class="text-danger">Name is Required</span> -->
                 <br>
@@ -16,11 +17,11 @@
                 <!-- <span class="text-danger">Invalid Mobile</span> -->
                 <br>
                 <textarea class="form-control" [(ngModel)]="user.address" rows="5" placeholder="Address"></textarea><br>
-                <button class="btn btn-primary">Order Confirmation</button>
+                <button class="btn btn-primary" (click)="confirm_order()">Order Confirmation</button>
                 <button class="btn btn-default" routerLink="/home">Continue to shop</button>
 
             </div>
-            <div class="col-sm-12 col-md-6">
+            <div class="col-sm-12 col-md-6" *ngIf="!orderSuccess">
                 <table class="table">
                     <tr>
                         <th>Product</th>
@@ -34,7 +35,7 @@
                         <td>
                             <a [routerLink]="'/product/'+m.ID"><img style="width:70px" [src]="thumbPath + m.Image" [alt]="m.Title" [title]="m.Title"></a>
                         </td>
-                        <td>{{m.Title}}</td>
+                        <td>{{m.Title}} ({{m.Code}})</td>
                         <td>₹ {{m.Price}}</td>
                         <td>{{m.Quantity}}</td>
                         <td>₹ {{m.Quantity * m.Price}}</td>
