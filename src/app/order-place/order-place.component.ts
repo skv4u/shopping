@@ -70,20 +70,30 @@ export class OrderPlaceComponent implements OnInit {
     return null;
   }
   confirm_order() {
-    // if (!this.isFormValid()) {
-    //   setTimeout(() => {
-    //     this.validForm = false;
-    //     this.validationMessage = "";
-    //   }, 3000);
-    //   return;
-    // }
-    console.log(this.checkoutList);
+    if (!this.isFormValid()) {
+      setTimeout(() => {
+        this.validForm = false;
+        this.validationMessage = "";
+      }, 3000);
+      return;
+    }
+    // console.log(this.checkoutList);
     
     // if(1){
     //   return;
     // }
+    let address = this.user.address.replace(/\n/g,"<br>");
+    let imageURL = "http://srkk.co.in/assets/images/thumb/"
     let message:string = `<p>&nbsp;</p>
-    <p>Dear SRKK,</p>    <p>You have following orders,</p>
+    <p>Dear SRKK,</p>
+    <p>User detail :</p>
+    <p>Name : ${this.user.name}</p>
+    <p>Email : ${this.user.email}</p>
+    <p>Mobile : ${this.user.mobile}</p>
+    <p>Shipping Address :<br>
+    ${this.user.address}
+    <hr>
+    <p>You have following orders,</p>
     <table style="height: 34px; width: 412px; border: 1px solid #999;">
     <tbody>
     <tr>
@@ -96,7 +106,7 @@ export class OrderPlaceComponent implements OnInit {
 
     for(let m of this.checkoutList){
       message +='<tr>';
-      message += `<td style="width: 69px; height: 43px;border: 1px solid #999;"><img src="http://icons.iconarchive.com/icons/oxygen-icons.org/oxygen/256/Status-user-online-icon.png" width="28" height="28" /></td>
+      message += `<td style="width: 69px; height: 43px;border: 1px solid #999;"><img src="${imageURL+m.Image}" width="28" height="28" /></td>
       <td style="width: 143px; height: 43px;border: 1px solid #999;">${m.Title}</td>
       <td style="width: 107px; height: 43px;border: 1px solid #999;">${m.Price}</td>
       <td style="width: 69px; height: 43px;border: 1px solid #999;">${m.Quantity}</td>
@@ -115,8 +125,8 @@ export class OrderPlaceComponent implements OnInit {
     <p>Regards,</p>
     <p>SRKK</p>`;
     let jsonEmail = {
-      "From":"santosh8935@gmail.com",
-      "Subject":"Hey Subject",
+      "From":this.user.email,
+      "Subject": "Order From " + this.user.name + ", Mobile : "+ this.user.mobile,
       "Message":message
     };
     this.commonService.postMethod(jsonEmail).subscribe(

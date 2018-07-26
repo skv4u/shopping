@@ -10,4 +10,5 @@ export class shopping {
   Discount: number;
   Image: string;
   Category:string;
+  OtherImages:string[];
 }

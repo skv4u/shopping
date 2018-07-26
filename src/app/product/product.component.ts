@@ -13,6 +13,7 @@ export class ProductComponent implements OnInit {
   productData : any = {};
   thumbPath:string = './assets/images/thumb/';
   largePath:string = './assets/images/large/';
+  subPath:string = './assets/images/sublist/';
   list: shopping[] = [];
   updateTopCart: boolean = true;  
   

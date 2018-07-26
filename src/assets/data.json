@@ -3,12 +3,13 @@
         "Code": "101",
         "Title": "Terracotta Handmade",
         "SubTitle": "Sharmadha Crafts",
-        "Description": "Some description",
+        "Description": "Seeds of compassion ‘RUDRAKSHA’ = Rudra+Aksha, meaning “Tear Drops of Lord Shiva”. Rudraksha worshipped as a source of good luck, good health, prosperity, medical values, success, financial gains and for eradication of evil forces. We are presenting those compassionate seeds in an ingenious manner.Only a single piece per item is available. We also provide modification based on availabilty of raw materials. ",
         "Description1": "",
         "Price": 10,
         "Discount": 2,
         "Image": "1.jpg",
-        "Category": "Necklaces"
+        "Category": "Necklaces",
+        "OtherImages": ["1_1.jpg", "1_2.jpg"]
 
     },
     {
@@ -20,8 +21,9 @@
         "Description1": "",
         "Price": 20,
         "Discount": 2,
-        "Image": "1.jpg",
-        "Category": "Earrings"
+        "Image": "2.jpg",
+        "Category": "Earrings",
+        "OtherImages": []
     },
     {
         "ID": 3,
@@ -32,7 +34,8 @@
         "Description1": "another",
         "Price": 800,
         "Discount": 2,
-        "Image": "1.jpg",
-        "Category": "Earrings"
+        "Image": "3.jpg",
+        "Category": "Earrings",
+        "OtherImages": []
     }
 ]
