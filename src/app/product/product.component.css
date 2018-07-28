@@ -5,3 +5,12 @@
     border: 2px solid;
     margin: 5px 0px 15px 0px;
 }
+
+.sub-image-a {
+    cursor: pointer;
+    color: #007bff;
+}
+
+.pull-right {
+    float: right;
+}

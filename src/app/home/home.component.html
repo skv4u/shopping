@@ -17,10 +17,10 @@
                 <div class="card mb-3 box-shadow" style="cursor:pointer" (click)="productTarget(m.Code,$event)">
                     <img class="card-img-top" [src]="thumbPath + m.Image" [alt]="m.Title">
                     <div class="card-body">
-                        <button type="button" class="btn btn-sm btn-primary addcartplus">+</button>
+                        <button type="button" class="btn btn-sm btn-warning addcartplus"><i class="fas fa-cart-plus"></i></button>
                         <p class="card-text">{{m.Title}}</p>
                         <div class="d-flex justify-content-between align-items-center">
-                            <small>₹ {{m.Price}}</small>
+                            <small>Price ₹ {{m.Price}}</small>
                         </div>
 
                     </div>

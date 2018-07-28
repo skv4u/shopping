@@ -83,7 +83,8 @@ export class OrderPlaceComponent implements OnInit {
     //   return;
     // }
     let address = this.user.address.replace(/\n/g,"<br>");
-    let imageURL = "http://srkk.co.in/assets/images/thumb/"
+    let imageURL = "http://srkk.co.in/demo/assets/images/thumb/"
+    let baseURL = "http://srkk.co.in/demo/" //http://srkk.co.in/demo/#/product/101
     let message:string = `<p>&nbsp;</p>
     <p>Dear SRKK,</p>
     <p>User detail :</p>
@@ -106,8 +107,8 @@ export class OrderPlaceComponent implements OnInit {
 
     for(let m of this.checkoutList){
       message +='<tr>';
-      message += `<td style="width: 69px; height: 43px;border: 1px solid #999;"><img src="${imageURL+m.Image}" width="28" height="28" /></td>
-      <td style="width: 143px; height: 43px;border: 1px solid #999;">${m.Title}</td>
+      message += `<td style="width: 69px; height: 43px;border: 1px solid #999;"><a href="${baseURL+'#/product/' + m.Code}"><img src="${imageURL+m.Image}" width="28" height="28" /></a></td>
+      <td style="width: 143px; height: 43px;border: 1px solid #999;"><a href="${baseURL+'#/product/' + m.Code}">${m.Title}</a></td>
       <td style="width: 107px; height: 43px;border: 1px solid #999;">${m.Price}</td>
       <td style="width: 69px; height: 43px;border: 1px solid #999;">${m.Quantity}</td>
       <td style="width: 69px; height: 43px;border: 1px solid #999;">${m.Total}</td>`;
@@ -166,6 +167,6 @@ export class OrderPlaceComponent implements OnInit {
 
   validateMobile(mobile) {
     let re = /^(\+\d{1,3}[- ]?)?\d{10}$/;
-    return re.test(mobile);
+    return !re.test(mobile);
   }
 }

@@ -26,6 +26,7 @@ export class ProductComponent implements OnInit {
         this.list = data;
         let x:any = this.product(productCode);
         this.productData = x.Data;
+        this.productData.Image = this.largePath + this.productData.Image;
         this.productIndex = x.Index;
       }    
     )
@@ -77,5 +78,8 @@ export class ProductComponent implements OnInit {
     setTimeout(() => {
       this.updateTopCart = true;
     }, 200)
+  }
+  changePath(path){
+    this.productData.Image = path;
   }
 }

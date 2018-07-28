@@ -3,25 +3,26 @@
     <div class="container-fluid" *ngIf="productData">
         <div class="row">
             <div class="col-sm-12 col-md-5">
-                <img _ngcontent-c2="" alt="Card image cap" class="card-img-single" [src]="largePath + productData.Image">
+                <img _ngcontent-c2="" alt="Card image cap" class="card-img-single" [src]="productData.Image">
             </div>
             <div class="col-sm-12 col-md-7">
+                <button routerLink="/checkout" class="btn btn-danger pull-right">Checkout</button>
+
                 <p class="product-title">{{productData.Title}}</p>
                 <small>₹ {{productData.Price}}</small>
                 <p class="description">{{productData.Description}}</p>
                 <p>&nbsp;</p>
                 <p class="description">{{productData.Description1}}</p>
                 <p>&nbsp;</p>
-                <div *ngIf="productData && productData.OtherImages.length">
-                    <a href="#" *ngFor="let m of productData.OtherImages">
-                        <img class="sub-image" [src]="subPath+m">
+                <div *ngIf="productData.OtherImages">
+                    <a class="sub-image-a" *ngFor="let m of productData.OtherImages">
+                        <img class="sub-image" [src]="subPath+m" (click)="changePath(subPath + m)">
                     </a>
                 </div>
-                <button class="btn btn-primary" (click)="addToCart(productIndex)">Add to cart</button>
+                <button class="btn btn-primary " (click)="addToCart(productIndex) ">Add to cart</button>
                 <p>&nbsp;</p>
                 <p>&nbsp;</p>
                 <p>&nbsp;</p>
-                <button routerLink="/checkout" class="btn btn-danger">Checkout</button>
             </div>
         </div>
     </div>

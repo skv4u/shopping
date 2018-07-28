@@ -42,7 +42,7 @@ export class HomeComponent implements OnInit {
   }
   productTarget(code: string, elem: any) {
     // console.log(elem.target.tagName);
-    if (elem.target.tagName.toLowerCase() == 'button') {
+    if (elem.target.tagName.toLowerCase() == 'button' || elem.target.tagName.toLowerCase()=='i') {
       let index:any = this.product(code);
       this.addToCart(index.Index);
     }
@@ -52,7 +52,7 @@ export class HomeComponent implements OnInit {
   }
   addToCart(index: number) {
     let selectedList = this.commonService.getProductDetail();
-    console.log(selectedList);
+    // console.log(selectedList);
     if (selectedList == undefined || selectedList == null) {
       let addtocart = [
         {
