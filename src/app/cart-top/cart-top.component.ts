@@ -26,6 +26,9 @@ export class CartTopComponent implements OnInit {
     this.price = 0;
   }
   routeToCheckout() {
+    if(this.total == 0){
+      return;
+    }
     this.router.navigate(['/checkout']);
   }
 }

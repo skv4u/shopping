@@ -3,7 +3,14 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-12 col-md-12" *ngIf="orderSuccess">
-                <div class="alert alert-success text-center">Thank you for placing order</div>
+                <!-- <div class="alert alert-success text-center">Thank you for placing order</div> -->
+                <div class="alert alert-success text-center" role="alert">
+                    <h4 class="alert-heading">Well done!</h4>
+                    <p>Thank you for placing order, We will contact you soon. </p>
+                    <hr>
+                    <p class="mb-0">Note: We accept payment by Transfer to A/c or Paytm or Transfer via UPI (Tez,BHIM,PhonePe etc...) </p>
+                    <p><a href="#" routerLink="/home" class="alert-link">Click here to Continue shopping</a></p>
+                </div>
             </div>
             <div class="col-sm-12 col-md-6" *ngIf="!orderSuccess">
                 <div class="alert alert-danger" *ngIf="validForm">{{validationMessage}}</div>
@@ -17,7 +24,8 @@
                 <!-- <span class="text-danger">Invalid Mobile</span> -->
                 <br>
                 <textarea class="form-control" [(ngModel)]="user.address" rows="5" placeholder="Address"></textarea><br>
-                <button class="btn btn-primary" (click)="confirm_order()">Order Confirmation</button>
+                <button class="btn btn-primary" (click)="confirm_order()" [disabled]="IsOrderProcessing">Order Confirmation<i *ngIf="IsOrderProcessing" class="fa fa-spinner fa-spin"></i></button>
+
                 <button class="btn btn-default" routerLink="/home">Continue to shop</button>
 
             </div>

@@ -31,24 +31,27 @@ export class CheckoutComponent implements OnInit {
   }
   updateList() {
     let selectedList = this.commonService.getProductDetail();
-    let total = 0;
-    for (let m of selectedList) {
-      let currentObject: any = this.getDetailByID(m.ID);
-      if (currentObject) {
-        this.checkoutList.push({
-          "ID": currentObject.ID,
-          "Code":currentObject.Code,
-          "Title": currentObject.Title,
-          "Image": currentObject.Image,
-          "Price": currentObject.Price,
-          "Quantity": m.Quantity,
-          "Total": currentObject.Price * m.Quantity,
-          "MasterIndex": currentObject.index
-        });
-        total = total + (currentObject.Price * m.Quantity)
+    if (selectedList && selectedList.length) {
+
+      let total = 0;
+      for (let m of selectedList) {
+        let currentObject: any = this.getDetailByID(m.ID);
+        if (currentObject) {
+          this.checkoutList.push({
+            "ID": currentObject.ID,
+            "Code": currentObject.Code,
+            "Title": currentObject.Title,
+            "Image": currentObject.Image,
+            "Price": currentObject.Price,
+            "Quantity": m.Quantity,
+            "Total": currentObject.Price * m.Quantity,
+            "MasterIndex": currentObject.index
+          });
+          total = total + (currentObject.Price * m.Quantity)
+        }
       }
+      this.subTotal = total;
     }
-    this.subTotal = total;
   }
   updateTotal() {
     let total = 0;
@@ -79,8 +82,8 @@ export class CheckoutComponent implements OnInit {
     }
     this.commonService.setProductDetail(storage);
   }
-  removeFromList(index:number){
-    this.checkoutList.splice(index,1);
+  removeFromList(index: number) {
+    this.checkoutList.splice(index, 1);
     this.updateCart();
   }
 

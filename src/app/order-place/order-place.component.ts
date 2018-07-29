@@ -13,7 +13,10 @@ export class OrderPlaceComponent implements OnInit {
   largePath: string = './assets/images/large/';
   list: shopping[] = [];
   updateTopCart: boolean = true;
+  IsOrderProcessing: boolean = false;
+
   checkoutList: any[] = [];
+
   subTotal: number = 0;
   user: any = {
     "name": "",
@@ -36,6 +39,7 @@ export class OrderPlaceComponent implements OnInit {
   }
   updateList() {
     let selectedList = this.commonService.getProductDetail();
+    if(selectedList && selectedList.length){
     let total = 0;
     for (let m of selectedList) {
       let currentObject: any = this.getDetailByID(m.ID);
@@ -53,6 +57,7 @@ export class OrderPlaceComponent implements OnInit {
       }
     }
     this.subTotal = total;
+  }
   }
   updateTotal() {
     let total = 0;
@@ -74,45 +79,55 @@ export class OrderPlaceComponent implements OnInit {
       setTimeout(() => {
         this.validForm = false;
         this.validationMessage = "";
-      }, 3000);
+      }, 7000);
       return;
     }
+    if(!this.checkoutList.length){
+      this.validForm = true;
+      this.validationMessage = "Oops! you haven't selected any product to Order";
+      return false;
+    }
     // console.log(this.checkoutList);
-    
+
     // if(1){
     //   return;
     // }
-    let address = this.user.address.replace(/\n/g,"<br>");
+    let address = this.user.address.replace(/\r\n|\n|\n\r\|r\r/g, "<br>");
     let imageURL = "http://srkk.co.in/demo/assets/images/thumb/"
     let baseURL = "http://srkk.co.in/demo/" //http://srkk.co.in/demo/#/product/101
-    let message:string = `<p>&nbsp;</p>
+    let message: string = `
     <p>Dear SRKK,</p>
-    <p>User detail :</p>
-    <p>Name : ${this.user.name}</p>
-    <p>Email : ${this.user.email}</p>
-    <p>Mobile : ${this.user.mobile}</p>
-    <p>Shipping Address :<br>
-    ${this.user.address}
-    <hr>
     <p>You have following orders,</p>
-    <table style="height: 34px; width: 412px; border: 1px solid #999;">
+    <table style="height: 34px; width: 700px; border: 1px solid #999; text-align:center;">
     <tbody>
     <tr>
-    <td style="width: 69px; height: 18px;  border: 1px solid #999;">Product</td>
-    <td style="width: 143px; height: 18px; border: 1px solid #999;">Title</td>
-    <td style="width: 107px; height: 18px; border: 1px solid #999;">Price</td>
-    <td style="width: 69px; height: 18px; border: 1px solid #999;">Quantity</td>
-    <td style="width: 69px; height: 18px; border: 1px solid #999;">Total</td>
+    <th style="width: 69px; height: 18px;  border: 1px solid #999;">Name</th>
+    <th style="width: 143px; height: 18px; border: 1px solid #999;">Email</th>
+    <th style="width: 107px; height: 18px; border: 1px solid #999;">Mobile</th>
+    <th colspan="2" style="width: 69px; height: 18px; border: 1px solid #999;">Address</th>    
+    </tr>
+    <tr>
+    <td style="width: 69px; height: 18px;  border: 1px solid #999;">${this.user.name}</td>
+    <td style="width: 143px; height: 18px; border: 1px solid #999;">${this.user.email}</td>
+    <td style="width: 107px; height: 18px; border: 1px solid #999;">${this.user.mobile}</td>
+    <td colspan="2" style="width: 69px; height: 18px; border: 1px solid #999;">${this.user.address}</td>    
+    </tr>
+    <tr>
+    <th style="width: 69px; height: 18px;  border: 1px solid #999;">Product</th>
+    <th style="width: 143px; height: 18px; border: 1px solid #999;">Title</th>
+    <th style="width: 107px; height: 18px; border: 1px solid #999;">Price</th>
+    <th style="width: 69px; height: 18px; border: 1px solid #999;">Quantity</th>
+    <th style="width: 69px; height: 18px; border: 1px solid #999;">Total</th>
     </tr>`;
 
-    for(let m of this.checkoutList){
-      message +='<tr>';
-      message += `<td style="width: 69px; height: 43px;border: 1px solid #999;"><a href="${baseURL+'#/product/' + m.Code}"><img src="${imageURL+m.Image}" width="28" height="28" /></a></td>
-      <td style="width: 143px; height: 43px;border: 1px solid #999;"><a href="${baseURL+'#/product/' + m.Code}">${m.Title}</a></td>
+    for (let m of this.checkoutList) {
+      message += '<tr>';
+      message += `<td style="width: 69px; height: 43px;border: 1px solid #999;text-align:center;"><a href="${baseURL + '#/product/' + m.Code}"><img src="${imageURL + m.Image}" width="28" height="28" /></a></td>
+      <td style="width: 143px; height: 43px;border: 1px solid #999;"><a href="${baseURL + '#/product/' + m.Code}">${m.Title}</a></td>
       <td style="width: 107px; height: 43px;border: 1px solid #999;">${m.Price}</td>
       <td style="width: 69px; height: 43px;border: 1px solid #999;">${m.Quantity}</td>
       <td style="width: 69px; height: 43px;border: 1px solid #999;">${m.Total}</td>`;
-      message +='</tr>';
+      message += '</tr>';
     }
     message += `<tr>
     <td style="width: 69px; height: 43px;border: 1px solid #999;">&nbsp;</td>
@@ -126,14 +141,22 @@ export class OrderPlaceComponent implements OnInit {
     <p>Regards,</p>
     <p>SRKK</p>`;
     let jsonEmail = {
-      "From":this.user.email,
-      "Subject": "Order From " + this.user.name + ", Mobile : "+ this.user.mobile,
-      "Message":message
+      "From": this.user.email,
+      "Subject": "Order From " + this.user.name + ", Mobile : " + this.user.mobile,
+      "Message": message
     };
+    this.IsOrderProcessing = true;
     this.commonService.postMethod(jsonEmail).subscribe(
-      data =>{
-        console.log(data);
-        this.orderSuccess=true;
+      data => {
+        // console.log(data);
+        this.orderSuccess = true;
+        this.commonService.clearStorage();
+        this.IsOrderProcessing = false;
+        this.updateTopCart = false;
+        setTimeout(() => {
+          this.updateTopCart = true;
+        }, 200)
+
       }
     )
   }
@@ -156,8 +179,8 @@ export class OrderPlaceComponent implements OnInit {
       this.validationMessage = "Please enter valid Mobile";
       return false;
     }
-    this.validForm = true;
-    this.validationMessage = "Please enter valid Mobile";
+    this.validForm = false;
+    this.validationMessage = "";
     return true;
   }
   validateEmail(email) {
@@ -167,6 +190,6 @@ export class OrderPlaceComponent implements OnInit {
 
   validateMobile(mobile) {
     let re = /^(\+\d{1,3}[- ]?)?\d{10}$/;
-    return !re.test(mobile);
+    return re.test(mobile);
   }
 }
