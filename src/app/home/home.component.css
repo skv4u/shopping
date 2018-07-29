@@ -13,3 +13,14 @@
         width: 170px
     }
 }
+
+.top-category {
+    margin-top: -45px;
+    margin-bottom: 35px;
+}
+
+@media (max-width:576px) {
+    .top-category {
+        margin-top: 0;
+    }
+}
