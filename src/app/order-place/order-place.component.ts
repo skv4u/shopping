@@ -110,7 +110,7 @@ export class OrderPlaceComponent implements OnInit {
     <td style="width: 69px; height: 18px;  border: 1px solid #999;">${this.user.name}</td>
     <td style="width: 143px; height: 18px; border: 1px solid #999;">${this.user.email}</td>
     <td style="width: 107px; height: 18px; border: 1px solid #999;">${this.user.mobile}</td>
-    <td colspan="2" style="width: 69px; height: 18px; border: 1px solid #999;">${this.user.address}</td>    
+    <td colspan="2" style="width: 69px; height: 18px; border: 1px solid #999;">${address}</td>    
     </tr>
     <tr>
     <th style="width: 69px; height: 18px;  border: 1px solid #999;">Product</th>

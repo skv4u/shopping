@@ -14,15 +14,9 @@
             </div>
             <div class="col-sm-12 col-md-6" *ngIf="!orderSuccess">
                 <div class="alert alert-danger" *ngIf="validForm">{{validationMessage}}</div>
-                <input type="text" [(ngModel)]="user.name" placeholder="Name" class="form-control">
-                <!-- <span class="text-danger">Name is Required</span> -->
-                <br>
-                <input type="text" [(ngModel)]="user.email" placeholder="Email" class="form-control">
-                <br>
-
-                <input type="text" [(ngModel)]="user.mobile" placeholder="Mobile" class="form-control">
-                <!-- <span class="text-danger">Invalid Mobile</span> -->
-                <br>
+                <input type="text" [(ngModel)]="user.name" placeholder="Name" class="form-control"><br>
+                <input type="text" [(ngModel)]="user.email" placeholder="Email" class="form-control"><br>
+                <input type="text" [(ngModel)]="user.mobile" placeholder="Mobile" class="form-control"><br>
                 <textarea class="form-control" [(ngModel)]="user.address" rows="5" placeholder="Address"></textarea><br>
                 <button class="btn btn-primary" (click)="confirm_order()" [disabled]="IsOrderProcessing">Order Confirmation<i *ngIf="IsOrderProcessing" class="fa fa-spinner fa-spin"></i></button>
 

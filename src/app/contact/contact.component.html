@@ -2,11 +2,27 @@
     <app-cart-top *ngIf="updateTopCart"></app-cart-top>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-sm-12 col-md-6">
-                <input type="text" placeholder="Name" class="form-control"><br>
+            <div class="col-sm-12 col-md-12" *ngIf="sendMailSuccess">
+                <!-- <div class="alert alert-success text-center">Thank you for placing order</div> -->
+                <div class="alert alert-success text-center" role="alert">
+                    <h4 class="alert-heading">Thank you for contact, We will get back to you soon.</h4>
+                    <p><a href="#" routerLink="/home" class="alert-link">Click here to Continue shopping</a></p>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6" *ngIf="!sendMailSuccess">
+                <!-- <input type="text" placeholder="Name" class="form-control"><br>
                 <input type="text" placeholder="Mobile" class="form-control"><br>
                 <textarea class="form-control" rows="5" placeholder="Query/Suggestion/Report Bug"></textarea><br>
-                <button class="btn btn-primary">Send</button>
+                <button class="btn btn-primary">Send</button> -->
+
+                <div class="alert alert-danger" *ngIf="validForm">{{validationMessage}}</div>
+                <input type="text" [(ngModel)]="user.name" placeholder="Name" class="form-control"><br>
+                <input type="text" [(ngModel)]="user.email" placeholder="Email" class="form-control"><br>
+                <input type="text" [(ngModel)]="user.mobile" placeholder="Mobile" class="form-control"><br>
+                <textarea class="form-control" [(ngModel)]="user.address" rows="5" placeholder="Query/Suggestion/Report Bug"></textarea><br>
+                <button class="btn btn-primary" (click)="confirm_order()" [disabled]="IsProgressing">Send<i *ngIf="IsProgressing" class="fa fa-spinner fa-spin"></i></button>
+                <button class="btn btn-default" routerLink="/home">Continue to shop</button>
+
 
             </div>
             <div class="col-sm-12 col-md-6">
