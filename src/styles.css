@@ -9476,3 +9476,8 @@ a.menu-link.active {
         transform: rotate(360deg);
     }
 }
+
+.product-sub-title {
+    font-size: 13px;
+    display: block;
+}

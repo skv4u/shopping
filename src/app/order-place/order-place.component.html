@@ -37,7 +37,7 @@
                         <td>
                             <a [routerLink]="'/product/'+m.ID"><img style="width:70px" [src]="thumbPath + m.Image" [alt]="m.Title" [title]="m.Title"></a>
                         </td>
-                        <td>{{m.Title}} ({{m.Code}})</td>
+                        <td style="width:300px;">{{m.Title}} ({{m.Code}})</td>
                         <td>₹ {{m.Price}}</td>
                         <td>{{m.Quantity}}</td>
                         <td>₹ {{m.Quantity * m.Price}}</td>
