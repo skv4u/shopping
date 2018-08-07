@@ -1,14 +1,27 @@
 [{
-    "ID": 1,
-    "Code": "LKPL01",
-    "Title": "Antique Gold Lakshmi Pendant with Pearl",
-    "SubTitle": "A rich and ethnic necklace with Pearl beads and embellished Lakshmi pendant with matching metal ear stud.",
-    "Description": "According to Hindu beliefs the Hindu Goddess Lakshmi is the Goddess of wealth, fortune, luxury, power, prosperity, generosity and embodiment of beauty. We beleive, there are no particular times and limitations that restrict our access to God. So wear this neck piece to keep following your divine guidance, and know you're on the right path.",
-    "Description1": "",
-    "Price": 900,
-    "Discount": 0,
-    "Image": "DSCT_1.JPG",
-    "Category": "Pearl Bead",
-    "OtherImages": ["DSCT_1.JPG", "DSCL_2.JPG"]
-
-}]
+        "ID": 1,
+        "Code": "LKPL01",
+        "Title": "Antique Gold Lakshmi Pendant with Pearl",
+        "SubTitle": "A rich and ethnic necklace with Pearl beads and embellished Lakshmi pendant with matching metal ear stud.",
+        "Description": "According to Hindu beliefs the Hindu Goddess Lakshmi is the Goddess of wealth, fortune, luxury, power, prosperity, generosity and embodiment of beauty. We beleive, there are no particular times and limitations that restrict our access to God. So wear this neck piece to keep following your divine guidance, and know you're on the right path.",
+        "Description1": "",
+        "Price": 900,
+        "Discount": 0,
+        "Image": "DSCT_1.JPG",
+        "Category": "Pearl Bead",
+        "OtherImages": ["DSCT_1.JPG", "DSCL_2.JPG"]
+    },
+    {
+        "ID": 2,
+        "Code": "QNPL01",
+        "Title": "Queen Pendant with Pearl Necklace",
+        "SubTitle": "A beautifull combination of Pearl chain along with Oxydised Queen Pendant in to a necklace. Comes with matching ear ring.",
+        "Description": "A Pearl is a beautiful thing that is produced by an injured life. It is the tear from the injury of the oyster. The treasure of our being in this world is also produced by an injured life, if we had not been injured, then we will not produce the pearl. More over it is believed by many that wearing a Pearl or Moti brings fortune, appreciation and fame to its wearer.",
+        "Description1": "",
+        "Price": 900,
+        "Discount": 0,
+        "Image": "DSCT_25.JPG",
+        "Category": "Pearl Bead",
+        "OtherImages": ["DSCT_25.JPG", "DSCL_2.JPG"]
+    }
+]

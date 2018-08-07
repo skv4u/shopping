@@ -75,6 +75,11 @@ export class OrderPlaceComponent implements OnInit {
     return null;
   }
   confirm_order() {
+    if(!this.checkoutList.length){
+      this.validForm = true;
+      this.validationMessage = "Oops! you haven't selected any product to Order";
+      return false;
+    }
     if (!this.isFormValid()) {
       setTimeout(() => {
         this.validForm = false;
@@ -82,11 +87,7 @@ export class OrderPlaceComponent implements OnInit {
       }, 7000);
       return;
     }
-    if(!this.checkoutList.length){
-      this.validForm = true;
-      this.validationMessage = "Oops! you haven't selected any product to Order";
-      return false;
-    }
+   
     // console.log(this.checkoutList);
 
     // if(1){
