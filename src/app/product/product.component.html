@@ -17,7 +17,7 @@
                 <p>&nbsp;</p>
                 <div *ngIf="productData.OtherImages">
                     <a class="sub-image-a" *ngFor="let m of productData.OtherImages">
-                        <img class="sub-image" [src]="subPath+m" (click)="changePath(subPath + m)">
+                        <img class="sub-image" [src]="largePath+m" (click)="changePath(largePath + m)">
                     </a>
                 </div>
                 <button class="btn btn-primary " (click)="addToCart(productIndex) ">Add to cart</button>

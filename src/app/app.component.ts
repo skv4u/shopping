@@ -28,6 +28,9 @@ export class AppComponent {
   toggleMenu(){
     this.collapse = this.collapse == 'collapse' ? '' : 'collapse';
   }
+  routeToHome(){
+    this.router.navigate(['/home']);
+  }
 }
 
 

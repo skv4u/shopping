@@ -1,16 +1,4 @@
-<!-- <header>
-    <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
-        <em>SRKK</em>
-
-        <ul class="list-unstyled">
-            <li *ngFor="let m of topMenu let i=index">
-                <a (click)="makeActive(i,m.Url)" class="text-white menu-link {{m.isActive?'active':''}}">{{m.Name}}</a>
-            </li>
-        </ul>
-    </nav>
-</header> -->
-<nav class="navbar navbar-expand-lg navbar-light">
-    <!-- <em>SRKK</em> -->
+<!-- <nav class="navbar navbar-expand-lg navbar-light">
     <button class="navbar-toggler" type="button" (click)="toggleMenu()">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -19,23 +7,17 @@
             <a *ngFor="let m of topMenu let i=index" (click)="makeActive(i,m.Url)" class="menu-link {{m.isActive?'active':''}}">{{m.Name}}</a>
         </div>
     </div>
-</nav>
-<div class="main-box text-center">
-    <em>
-    <h2 style="display: inline;">
+</nav> -->
+<div class="topbar">
 
+</div>
+<div class="main-box text-center">
+    <em (click)="routeToHome()">
+    <h2 style="display: inline;">
         <span style="color: #c31616;">Srabostir</span>
         <span style="color: #dea914;">Karukarjo</span>
     </h2>
 </em>
-    <!-- <img src="./assets/images/logo1.jpg" style="
-    height: 228px;
-    padding: 17px;
-    position: absolute;
-    top: 45px;
-"> -->
-
-
 
 </div>
 <router-outlet></router-outlet>

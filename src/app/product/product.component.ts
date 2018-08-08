@@ -13,7 +13,7 @@ export class ProductComponent implements OnInit {
   productData : any = {};
   thumbPath:string = './assets/images/thumb/';
   largePath:string = './assets/images/large/';
-  subPath:string = './assets/images/sublist/';
+  // subPath:string = './assets/images/sublist/';
   list: shopping[] = [];
   updateTopCart: boolean = true;  
   
@@ -26,7 +26,7 @@ export class ProductComponent implements OnInit {
         this.list = data;
         let x:any = this.product(productCode);
         this.productData = x.Data;
-        this.productData.Image = this.largePath + this.productData.Image;
+        this.productData.Image = this.largePath + this.productData.OtherImages[0];
         this.productIndex = x.Index;
       }    
     )

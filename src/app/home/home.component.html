@@ -1,13 +1,23 @@
 <div class="search">
-    <input type="text" class="form-control" id="search-input" [(ngModel)]="searchText" placeholder="Search..." autocomplete="off" (keyup.enter)="searchProduct()">
+    <!-- <input type="text" class="form-control" id="search-input" [(ngModel)]="searchText" placeholder="Search..." autocomplete="off" (keyup.enter)="searchProduct()"> -->
+    <input autocomplete="off" class="form-control ng-pristine ng-valid ng-touched" id="search-input" placeholder="Search..." type="text" (keyup.enter)="searchProduct()" ng-reflect-model="" style="
+    border: 0;
+    background: #e9e9e9;
+    border-bottom:  1px solid #666;
+    border-radius: 0;
+    transition: none;
+    box-shadow: none;
+    padding-right: 26px;
+">
 
-    <button class="btn btn-warning btn-outline" type="button" name="searchText" style="display: inline; float: right; margin-top: -37px;" (click)="searchProduct()">Search</button>
+    <!-- <button class="btn btn-warning btn-outline" type="button" name="searchText" style="display: inline; float: right; margin-top: -37px;" >Search</button> -->
+    <button name="searchText" class="search-button" type="button" (click)="searchProduct()"><i class="fa fa-search"></i></button>
 
 
 </div>
-<ul class="text-center top-category">
+<!-- <ul class="text-center top-category">
     <li *ngFor="let m of categoryList"><a href="#" (click)="categoryFilter(m)">{{m}}</a></li>
-</ul>
+</ul> -->
 <main role="main" class="bg-light">
     <app-cart-top *ngIf="updateTopCart"></app-cart-top>
     <div class="container-fluid">

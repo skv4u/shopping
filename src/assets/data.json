@@ -22,6 +22,19 @@
         "Discount": 0,
         "Image": "DSCT_25.JPG",
         "Category": "Pearl Bead",
-        "OtherImages": ["DSCT_25.JPG", "DSCL_2.JPG"]
+        "OtherImages": ["DSCL_3.JPG", "DSCL_4.JPG"]
+    },
+    {
+        "ID": 3,
+        "Code": "RDKC01",
+        "Title": "Rudraksha-Coin Statement Jewellery",
+        "SubTitle": "A beautiful combination of multi layered  Rudraksha with golden Coin. Comes with matching earrings.",
+        "Description": "‘RUDRAKSHA’ = Rudra+Aksha, meaning “Tear Drops of Lord Shiva”. Rudraksha worshipped as a source of good luck, good health, prosperity, medical values, success, financial gains and for eradication of evil forces. We are presenting those compassionate seeds in an ingenious manner.",
+        "Description1": "",
+        "Price": 1000,
+        "Discount": 0,
+        "Image": "DSCT_3.JPG",
+        "Category": "Pearl Bead",
+        "OtherImages": ["DSCL_5.jpg", "DSCL_6.JPG", "DSCL_7.JPG"]
     }
 ]
