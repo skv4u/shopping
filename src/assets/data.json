@@ -7,9 +7,9 @@
         "Description1": "",
         "Price": 900,
         "Discount": 0,
-        "Image": "DSCT_1.JPG",
+        "Image": "DSCT_1.jpg",
         "Category": "Pearl Bead",
-        "OtherImages": ["DSCT_1.JPG", "DSCL_2.JPG"]
+        "OtherImages": ["DSCT_1.jpg", "DSCL_2.jpg"]
     },
     {
         "ID": 2,
@@ -20,9 +20,9 @@
         "Description1": "",
         "Price": 900,
         "Discount": 0,
-        "Image": "DSCT_25.JPG",
+        "Image": "DSCT_25.jpg",
         "Category": "Pearl Bead",
-        "OtherImages": ["DSCL_3.JPG", "DSCL_4.JPG"]
+        "OtherImages": ["DSCL_3.jpg", "DSCL_4.jpg"]
     },
     {
         "ID": 3,
@@ -33,8 +33,48 @@
         "Description1": "",
         "Price": 1000,
         "Discount": 0,
-        "Image": "DSCT_3.JPG",
-        "Category": "Pearl Bead",
-        "OtherImages": ["DSCL_5.jpg", "DSCL_6.JPG", "DSCL_7.JPG"]
+        "Image": "DSCT_3.jpg",
+        "Category": "Rudrakhsha",
+        "OtherImages": ["DSCL_5.jpg", "DSCL_6.jpg", "DSCL_7.jpg"]
+    },
+    {
+        "ID": 4,
+        "Code": "LOTG01",
+        "Title": "Lotus 6 Pendant Multi Layerd Necklace 1",
+        "SubTitle": "A colourful combination of glass beads with german silver Lotus strung in to a necklace. Comes with an easy length adjustable thread dori.",
+        "Description": "The Lotus, symbol of strength & beauty that represents purity of body, mind, and spirit. This sense of purity arises from the flower's growing habit of rooting in mud and pushing up through the water to bloom. Just like the Lotus, We too have the ability to rise from the mud, Bloom out of the darkness and radiate into the World. Wear this necklace as a reminder of the incredible beauty that can come from change. Grow and believe!",
+        "Description1": "",
+        "Price": 1000,
+        "Discount": 0,
+        "Image": "DSCT_4.jpg",
+        "Category": "Glass Bead",
+        "OtherImages": ["DSCL_8.jpg", "DSCL_9.jpg", "DSCL_10.jpg"]
+    },
+    {
+        "ID": 5,
+        "Code": "DGA01",
+        "Title": "Durga Necklace 1",
+        "SubTitle": "A beautiful combination of black-red glass beads with Jumbo Durga pendant. Comes with matching earrings.",
+        "Description": "\"The energy of the warrior goddess Durga shows up to remind us to get striving, performance-oriented ego out of the way so that the deeper power can unfold according to her evolutionary imperative. Durga, is the unstoppable energy of spiritual growth\"",
+        "Description1": "",
+        "Price": 1200,
+        "Discount": 0,
+        "Image": "DSCT_24.jpg",
+        "Category": "Glass Bead",
+        "OtherImages": ["DSCL_11.jpg", "DSCL_12.jpg", "DSCL_13.jpg", "DSCL_14.jpg"]
+    },
+    {
+        "ID": 6,
+        "Code": "DHLB01",
+        "Title": "Dual Tone Dholki with Gold Gini",
+        "SubTitle": "A beautiful combination of 3 line Silver and Golden Dholki with antique gold Gini and matching earrings.",
+        "Description": "Brass shines as fair to the ignorant as gold to the goldsmiths...Brass jewellery is loved by many due to its beauty and versatility. There are so many creative designs available because of the softness and malleability of brass. Many people believe that by wearing brass jewelry, human skin will absorb minerals from the brass and provide the wearer with positive health benefits. Hence we have made this brass made dholki stunning neckpiece for you.",
+        "Description1": "",
+        "Price": 1250,
+        "Discount": 0,
+        "Image": "DSCT_5.jpg",
+        "Category": "Brass Bead",
+        "OtherImages": ["DSCL_15.jpg", "DSCL_16.jpg", "DSCL_17.jpg"]
     }
+
 ]

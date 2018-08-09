@@ -1,17 +1,10 @@
 <div class="search">
     <!-- <input type="text" class="form-control" id="search-input" [(ngModel)]="searchText" placeholder="Search..." autocomplete="off" (keyup.enter)="searchProduct()"> -->
-    <input autocomplete="off" class="form-control ng-pristine ng-valid ng-touched" id="search-input" placeholder="Search..." type="text" (keyup.enter)="searchProduct()" ng-reflect-model="" style="
-    border: 0;
-    background: #e9e9e9;
-    border-bottom:  1px solid #666;
-    border-radius: 0;
-    transition: none;
-    box-shadow: none;
-    padding-right: 26px;
-">
+    <input autocomplete="off" class="form-control search-input" id="search-input" [(ngModel)]="searchText" placeholder="Search..." type="text" (keyup.enter)="searchProduct()">
 
     <!-- <button class="btn btn-warning btn-outline" type="button" name="searchText" style="display: inline; float: right; margin-top: -37px;" >Search</button> -->
     <button name="searchText" class="search-button" type="button" (click)="searchProduct()"><i class="fa fa-search"></i></button>
+    <button name="searchText" class="search-button-close" type="button" (click)="categoryFilter('All')"><i class="fa fa-times"></i></button>
 
 
 </div>
@@ -30,7 +23,7 @@
                         <button type="button" class="btn btn-sm btn-warning addcartplus"><i class="fas fa-cart-plus"></i></button>
                         <p class="card-text">{{m.Title}}</p>
                         <div class="d-flex justify-content-between align-items-center">
-                            <small>Price ₹ {{m.Price}}</small>
+                            <small> ₹ {{m.Price}}</small>
                         </div>
 
                     </div>
