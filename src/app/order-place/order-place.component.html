@@ -35,9 +35,10 @@
                     <tr *ngFor="let m of checkoutList; let i=index">
 
                         <td>
-                            <a [routerLink]="'/product/'+m.ID"><img style="width:70px" [src]="thumbPath + m.Image" [alt]="m.Title" [title]="m.Title"></a>
+                            <a [routerLink]="'/product/'+m.Code"><img style="width:70px" [src]="thumbPath + m.Image" [alt]="m.Title" [title]="m.Title"></a>
                         </td>
-                        <td style="width:300px;">{{m.Title}} ({{m.Code}})</td>
+                        <td style="width:300px;"><a [routerLink]="'/product/'+m.Code">{{m.Title}} ({{m.Code}})</a></td>
+
                         <td>₹ {{m.Price}}</td>
                         <td>{{m.Quantity}}</td>
                         <td>₹ {{m.Quantity * m.Price}}</td>

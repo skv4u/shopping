@@ -70,8 +70,13 @@ export class ProductComponent implements OnInit {
 
       }
       this.commonService.setProductDetail(selectedList);
+     
     }
     this.initializeTopCart();
+    document.getElementById('snackbar').style.visibility = 'visible';
+    setTimeout(()=>{
+      document.getElementById('snackbar').style.visibility = 'hidden';        
+    },4000);
   }
   initializeTopCart() {
     this.updateTopCart = false;

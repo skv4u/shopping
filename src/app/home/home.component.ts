@@ -18,6 +18,7 @@ export class HomeComponent implements OnInit {
   updateTopCart: boolean = true;
   tempStorage:shopping[]=[];
   searchText:string='';
+  searchCancel:boolean = false;
   constructor(public commonService: CommonService,
     public router: Router) {
 
@@ -84,8 +85,13 @@ export class HomeComponent implements OnInit {
 
       }
       this.commonService.setProductDetail(selectedList);
+      
     }
     this.initializeTopCart();
+    document.getElementById('snackbar').style.visibility = 'visible';
+    setTimeout(()=>{
+      document.getElementById('snackbar').style.visibility = 'hidden';        
+    },4000);
   }
   initializeTopCart() {
     this.updateTopCart = false;
@@ -112,9 +118,12 @@ export class HomeComponent implements OnInit {
       });
 
     }
+    this.searchCancel = false;
+    
   }
   searchProduct(){
     // console.log(this.searchText)
+    this.searchCancel = true;
     this.list = this.tempStorage.filter((v)=>{
       return v.Title.toLowerCase().indexOf(this.searchText.toLowerCase()) != -1
     });
