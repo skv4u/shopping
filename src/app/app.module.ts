@@ -4,6 +4,9 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { ROUTING } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { NgxImageZoomModule } from 'ngx-image-zoom';
+
+
 import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
@@ -11,6 +14,7 @@ import { ProductComponent } from './product/product.component';
 import { CartTopComponent } from './cart-top/cart-top.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { OrderPlaceComponent } from './order-place/order-place.component';
+import { FaqComponent } from './faq/faq.component';
 
 @NgModule({
   declarations: [
@@ -21,13 +25,15 @@ import { OrderPlaceComponent } from './order-place/order-place.component';
     ProductComponent,
     CartTopComponent,
     CheckoutComponent,
-    OrderPlaceComponent
+    OrderPlaceComponent,
+    FaqComponent
   ],
   imports: [
     BrowserModule,
     ROUTING,
     FormsModule,
-    HttpModule
+    HttpModule,
+    NgxImageZoomModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

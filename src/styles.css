@@ -9303,10 +9303,11 @@ a.text-dark:hover {
     background-color: #007bff!important
 }
 
-li {
+
+/* li {
     display: inline;
     margin-right: 28px;
-}
+} */
 
 .logo {
     width: 86px;

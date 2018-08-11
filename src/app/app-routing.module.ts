@@ -6,6 +6,8 @@ import { ContactComponent } from 'app/contact/contact.component';
 import { ProductComponent } from 'app/product/product.component';
 import { CheckoutComponent } from 'app/checkout/checkout.component';
 import { OrderPlaceComponent } from 'app/order-place/order-place.component';
+import { FaqComponent } from 'app/faq/faq.component';
+
 
 
 const ROUTES: Routes = [
@@ -16,6 +18,7 @@ const ROUTES: Routes = [
   { path: 'product/:id',component: ProductComponent},
   {path: 'checkout', component: CheckoutComponent},
   {path: 'order-place', component: OrderPlaceComponent},
+  {path:"faq",component:FaqComponent},
   { path: '**', redirectTo: 'home' }
 ];
 

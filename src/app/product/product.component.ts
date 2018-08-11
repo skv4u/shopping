@@ -26,7 +26,8 @@ export class ProductComponent implements OnInit {
         this.list = data;
         let x:any = this.product(productCode);
         this.productData = x.Data;
-        this.productData.Image = this.largePath + this.productData.OtherImages[0];
+        // this.productData.Image = this.thumbPath + this.productData.OtherImages[0];
+        this.productData.Image = this.thumbPath + this.productData.Image;
         this.productIndex = x.Index;
       }    
     )

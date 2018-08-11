@@ -2,3 +2,7 @@
     min-height: 100px;
     margin-top: 70px;
 }
+
+footer ul li {
+    list-style: none;
+}
