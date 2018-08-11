@@ -88,10 +88,11 @@ export class HomeComponent implements OnInit {
       
     }
     this.initializeTopCart();
-    document.getElementById('snackbar').style.visibility = 'visible';
+    let x = document.getElementById('snackbar');
+    x.className = 'show';
     setTimeout(()=>{
-      document.getElementById('snackbar').style.visibility = 'hidden';        
-    },4000);
+      x.className = x.className.replace("show", "");
+    },3000);
   }
   initializeTopCart() {
     this.updateTopCart = false;

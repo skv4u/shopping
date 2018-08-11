@@ -9512,7 +9512,7 @@ a.menu-link.active {
     position: fixed;
     z-index: 10005;
     left: 48%;
-    top: 0;
+    bottom: 50px;
     font-size: 15px;
 }
 
@@ -9528,7 +9528,7 @@ a.menu-link.active {
         opacity: 0;
     }
     to {
-        bottom: 30px;
+        bottom: 50px;
         opacity: 1;
     }
 }
@@ -9539,14 +9539,14 @@ a.menu-link.active {
         opacity: 0;
     }
     to {
-        bottom: 30px;
+        bottom: 50px;
         opacity: 1;
     }
 }
 
 @-webkit-keyframes fadeout {
     from {
-        bottom: 30px;
+        bottom: 50px;
         opacity: 1;
     }
     to {
@@ -9557,7 +9557,7 @@ a.menu-link.active {
 
 @keyframes fadeout {
     from {
-        bottom: 30px;
+        bottom: 50px;
         opacity: 1;
     }
     to {

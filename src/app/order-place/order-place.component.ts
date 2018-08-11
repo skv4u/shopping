@@ -94,8 +94,8 @@ export class OrderPlaceComponent implements OnInit {
     //   return;
     // }
     let address = this.user.address.replace(/\r\n|\n|\n\r\|r\r/g, "<br>");
-    let imageURL = "http://srkk.co.in/demo/assets/images/thumb/"
-    let baseURL = "http://srkk.co.in/demo/" //http://srkk.co.in/demo/#/product/101
+    let imageURL = "http://srkk.co.in/assets/images/thumb/"
+    let baseURL = "http://srkk.co.in/" //http://srkk.co.in/demo/#/product/101
     let message: string = `
     <p>Dear SRKK,</p>
     <p>You have following orders,</p>
