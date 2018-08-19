@@ -23,12 +23,12 @@
         <li>
             <a href="#">Products &#9662;</a>
             <ul class="dropdown">
-                <li><a href="#">Laptops</a></li>
+                <li><a (click)="categoryFilter('laptop')">Laptops</a></li>
                 <li><a href="#">Monitors</a></li>
                 <li><a href="#">Printers</a></li>
             </ul>
         </li>
-        <li *ngFor="let m of categoryList"><a href="#" (click)="categoryFilter(m)">{{m}}</a></li>
+        <li *ngFor="let m of categoryList"><a (click)="categoryFilter(m)">{{m}}</a></li>
     </ul>
 </div>
 <router-outlet></router-outlet>

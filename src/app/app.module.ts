@@ -18,6 +18,7 @@ import { FaqComponent } from './faq/faq.component';
 import { PrivacyComponent } from './privacy/privacy.component';
 import { TncComponent } from './tnc/tnc.component';
 import { ReturnComponent } from './return/return.component';
+import { CategoryComponent } from './category/category.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { ReturnComponent } from './return/return.component';
     FaqComponent,
     PrivacyComponent,
     TncComponent,
-    ReturnComponent
+    ReturnComponent,
+    CategoryComponent
   ],
   imports: [
     BrowserModule,

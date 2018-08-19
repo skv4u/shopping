@@ -1,22 +1,9 @@
-<div class="search">
-    <!-- <input type="text" class="form-control" id="search-input" [(ngModel)]="searchText" placeholder="Search..." autocomplete="off" (keyup.enter)="searchProduct()"> -->
-    <input autocomplete="off" class="form-control search-input" id="search-input" [(ngModel)]="searchText" placeholder="Search..." type="text" (keyup.enter)="searchProduct()">
-
-    <!-- <button class="btn btn-warning btn-outline" type="button" name="searchText" style="display: inline; float: right; margin-top: -37px;" >Search</button> -->
-    <button name="searchText" class="search-button" type="button" (click)="searchProduct()"><i class="fa fa-search"></i></button>
-    <button *ngIf="searchCancel" name="searchText" class="search-button-close" type="button" (click)="categoryFilter('All')"><i class="fa fa-times"></i></button>
-
-
-</div>
-<!-- <ul class="text-center top-category">
-    <li *ngFor="let m of categoryList"><a href="#" (click)="categoryFilter(m)">{{m}}</a></li>
-</ul> -->
 <main role="main" class="bg-light">
     <app-cart-top *ngIf="updateTopCart"></app-cart-top>
     <div class="container-fluid">
 
         <div class="row" *ngIf="list.length">
-            <div class="col-sm-6 col-md-3 text-center" *ngFor="let m of list; let i=index">
+            <div class="col-sm-6 col-md-3" *ngFor="let m of list; let i=index">
                 <div class="card mb-3 box-shadow" style="cursor:pointer" (click)="productTarget(m.Code,$event)">
                     <img class="card-img-top" [src]="thumbPath + m.Image" [alt]="m.Title">
                     <div class="card-body">

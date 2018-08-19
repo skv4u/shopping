@@ -10,6 +10,7 @@ import { FaqComponent } from 'app/faq/faq.component';
 import { PrivacyComponent } from 'app/privacy/privacy.component';
 import { TncComponent } from 'app/tnc/tnc.component';
 import { ReturnComponent } from 'app/return/return.component';
+import { CategoryComponent } from 'app/category/category.component';
 
 
 
@@ -25,6 +26,7 @@ const ROUTES: Routes = [
   {path:"privacy",component:PrivacyComponent},
   {path:"tnc",component:TncComponent},
   {path:"return",component:ReturnComponent},
+  {path:"category/:type",component:CategoryComponent},
   { path: '**', redirectTo: 'home' }
 ];
 

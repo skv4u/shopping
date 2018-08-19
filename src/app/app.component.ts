@@ -10,7 +10,7 @@ export class AppComponent {
   
   topMenu : any[] = [];
   collapse: string = 'collapse';
-  categoryList:string[]=["All","Necklaces","Earrings","Other","Sale"];
+  categoryList:string[]=["Rudrakhsha","Necklaces","Earrings","Other","Sale"];
   constructor(public router: Router){
     let page = window.location.hash.substring(2);
     this.topMenu = [
@@ -32,7 +32,8 @@ export class AppComponent {
   routeToHome(){
     this.router.navigate(['/home']);
   }
-  categoryFilter(){
+  categoryFilter(type:string){
+    this.router.navigate(['/category/' + type]);
     
   }
 }
