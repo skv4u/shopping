@@ -18,7 +18,18 @@
         <span style="color: #dea914;">Karukarjo</span>
     </h2>
 </em>
+    <ul class="menu">
 
+        <li>
+            <a href="#">Products &#9662;</a>
+            <ul class="dropdown">
+                <li><a href="#">Laptops</a></li>
+                <li><a href="#">Monitors</a></li>
+                <li><a href="#">Printers</a></li>
+            </ul>
+        </li>
+        <li *ngFor="let m of categoryList"><a href="#" (click)="categoryFilter(m)">{{m}}</a></li>
+    </ul>
 </div>
 <router-outlet></router-outlet>
 <footer style="padding: 14px; color:#333;width: 100%; background-color: #e1e1df;">

@@ -11,7 +11,7 @@ import { shopping } from './../model/model';
 })
 export class HomeComponent implements OnInit {
 
-  categoryList:string[]=["All","Necklaces","Earrings","Other","Sale"]
+  // categoryList:string[]=["All","Necklaces","Earrings","Other","Sale"];
   list: shopping[] = [];
   thumbPath: string = './assets/images/thumb/';
   largePath: string = './assets/images/large/';
@@ -126,7 +126,7 @@ export class HomeComponent implements OnInit {
     // console.log(this.searchText)
     this.searchCancel = true;
     this.list = this.tempStorage.filter((v)=>{
-      return v.Title.toLowerCase().indexOf(this.searchText.toLowerCase()) != -1
+      return v.Title.toLowerCase().indexOf(this.searchText.toLowerCase()) != -1 || v.Category.toLowerCase().indexOf(this.searchText.toLowerCase()) != -1
     });
   }
 

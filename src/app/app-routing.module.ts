@@ -7,6 +7,9 @@ import { ProductComponent } from 'app/product/product.component';
 import { CheckoutComponent } from 'app/checkout/checkout.component';
 import { OrderPlaceComponent } from 'app/order-place/order-place.component';
 import { FaqComponent } from 'app/faq/faq.component';
+import { PrivacyComponent } from 'app/privacy/privacy.component';
+import { TncComponent } from 'app/tnc/tnc.component';
+import { ReturnComponent } from 'app/return/return.component';
 
 
 
@@ -19,6 +22,9 @@ const ROUTES: Routes = [
   {path: 'checkout', component: CheckoutComponent},
   {path: 'order-place', component: OrderPlaceComponent},
   {path:"faq",component:FaqComponent},
+  {path:"privacy",component:PrivacyComponent},
+  {path:"tnc",component:TncComponent},
+  {path:"return",component:ReturnComponent},
   { path: '**', redirectTo: 'home' }
 ];
 
