@@ -20,15 +20,25 @@
 </em>
     <ul class="menu">
 
-        <li>
+        <!-- <li>
             <a href="#">Products &#9662;</a>
             <ul class="dropdown">
                 <li><a (click)="categoryFilter('laptop')">Laptops</a></li>
                 <li><a href="#">Monitors</a></li>
                 <li><a href="#">Printers</a></li>
             </ul>
+        </li> -->
+        <li *ngFor="let m of categoryList">
+            <!-- <a (click)="categoryFilter(m)">
+                    {{m}}
+                </a> -->
+
+            <a *ngIf="m.List.length" href="#">{{m.Name}} &#9662;</a>
+            <a *ngIf="!m.List.length" href="#">{{m.Name}}</a>
+            <ul class="dropdown" *ngIf="m.List.length">
+                <li *ngFor="let x of m.List"><a (click)="categoryFilter(x)">{{x}}</a></li>
+            </ul>
         </li>
-        <li *ngFor="let m of categoryList"><a (click)="categoryFilter(m)">{{m}}</a></li>
     </ul>
 </div>
 <router-outlet></router-outlet>

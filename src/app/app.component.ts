@@ -10,7 +10,10 @@ export class AppComponent {
   
   topMenu : any[] = [];
   collapse: string = 'collapse';
-  categoryList:string[]=["Rudrakhsha","Necklaces","Earrings","Other","Sale"];
+  categoryList:any[]=[{"Name":"Home","List":[]},
+  {"Name":"Necklaces","List":["Beads","German Silver","Ghungroo","Brass","Dokra","Agate","Fabric","Thread","Contempary","Statement"]},
+  {"Name":"Earrings","List":["Beads","German Silver","Dokra","Fabric","Agate","Thread"]},
+  {"Name":"Others","List":[]},{"Name":"Sale With Us","List":[]},{"Name":"About Us","List":[]}];
   constructor(public router: Router){
     let page = window.location.hash.substring(2);
     this.topMenu = [
