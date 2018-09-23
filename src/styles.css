@@ -9384,6 +9384,7 @@ a.menu-link.active {
 
 .card-text {
     font-size: 13px;
+    display: flex;
 }
 
 .addcartplus {

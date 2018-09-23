@@ -8,7 +8,7 @@
         "Price": 900,
         "Discount": 0,
         "Image": "DSCT_1.jpg",
-        "Category": "Pearl Bead",
+        "Category": "PearlBead",
         "OtherImages": ["DSCL_1.jpg", "DSCL_2.jpg"]
     },
     {
@@ -21,7 +21,7 @@
         "Price": 900,
         "Discount": 0,
         "Image": "DSCT_25.jpg",
-        "Category": "Pearl Bead",
+        "Category": "PearlBead",
         "OtherImages": ["DSCL_3.jpg", "DSCL_4.jpg"]
     },
     {
@@ -47,7 +47,7 @@
         "Price": 1000,
         "Discount": 0,
         "Image": "DSCT_4.jpg",
-        "Category": "Glass Bead",
+        "Category": "GlassBead",
         "OtherImages": ["DSCL_8.jpg", "DSCL_9.jpg", "DSCL_10.jpg"]
     },
     {
@@ -60,7 +60,7 @@
         "Price": 1200,
         "Discount": 0,
         "Image": "DSCT_24.jpg",
-        "Category": "Glass Bead",
+        "Category": "GlassBead",
         "OtherImages": ["DSCL_11.jpg", "DSCL_12.jpg", "DSCL_13.jpg", "DSCL_14.jpg"]
     },
     {
@@ -73,7 +73,7 @@
         "Price": 1250,
         "Discount": 0,
         "Image": "DSCT_5.jpg",
-        "Category": "Brass Bead",
+        "Category": "BrassBead",
         "OtherImages": ["DSCL_15.jpg", "DSCL_16.jpg", "DSCL_17.jpg"]
     },
     {
@@ -176,7 +176,7 @@
     },
     {
         "ID": 15,
-        "Category": "",
+        "Category": "Statement",
         "Code": "ELPH01",
         "Title": "Bahubali Pendant Statement Neckpiece 1",
         "SubTitle": "A beautiful combination of blue thread with silver Elephant Locket in to a neckpiece. Comes with matching earrings.",

@@ -10,10 +10,14 @@ export class AppComponent {
   
   topMenu : any[] = [];
   collapse: string = 'collapse';
-  categoryList:any[]=[{"Name":"Home","List":[]},
-  {"Name":"Necklaces","List":["Beads","German Silver","Ghungroo","Brass","Dokra","Agate","Fabric","Thread","Contempary","Statement"]},
-  {"Name":"Earrings","List":["Beads","German Silver","Dokra","Fabric","Agate","Thread"]},
-  {"Name":"Others","List":[]},{"Name":"Sale With Us","List":[]},{"Name":"About Us","List":[]}];
+  categoryList:any[]=[
+    {"Name":"Home","URL":"home","List":[]},
+    {"Name":"Necklaces","URL":"","List":["PearlBead","GermanSilver","Ghungroo","Brass","Dokra","Agate","Fabric","Thread","Contemporary","Statement"]},
+    {"Name":"Earrings","URL":"home","List":["PearlBead","GermanSilver","Dokra","Fabric","Agate","Thread"]},
+    {"Name":"Others","URL":"other-sale","List":[]},
+    {"Name":"Sale With Us","URL":"sale-with-us","List":[]},
+    {"Name":"About Us","URL":"about","List":[]}
+  ];
   constructor(public router: Router){
     let page = window.location.hash.substring(2);
     this.topMenu = [
@@ -32,10 +36,11 @@ export class AppComponent {
   toggleMenu(){
     this.collapse = this.collapse == 'collapse' ? '' : 'collapse';
   }
-  routeToHome(){
-    this.router.navigate(['/home']);
+  routeToPage(page:string){
+    this.router.navigate(['/'+page]);
   }
   categoryFilter(type:string){
+
     this.router.navigate(['/category/' + type]);
     
   }

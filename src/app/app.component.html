@@ -12,7 +12,7 @@
 
 </div>
 <div class="main-box text-center">
-    <em (click)="routeToHome()">
+    <em (click)="routeToPage('home')">
     <h2 style="display: inline;">
         <span style="color: #c31616;">Srabostir</span>
         <span style="color: #dea914;">Karukarjo</span>
@@ -33,8 +33,8 @@
                     {{m}}
                 </a> -->
 
+            <a *ngIf="!m.List.length" (click)="routeToPage(m.URL)">{{m.Name}}</a>
             <a *ngIf="m.List.length" href="#">{{m.Name}} &#9662;</a>
-            <a *ngIf="!m.List.length" href="#">{{m.Name}}</a>
             <ul class="dropdown" *ngIf="m.List.length">
                 <li *ngFor="let x of m.List"><a (click)="categoryFilter(x)">{{x}}</a></li>
             </ul>

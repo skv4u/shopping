@@ -11,6 +11,8 @@ import { PrivacyComponent } from 'app/privacy/privacy.component';
 import { TncComponent } from 'app/tnc/tnc.component';
 import { ReturnComponent } from 'app/return/return.component';
 import { CategoryComponent } from 'app/category/category.component';
+import { OtherSaleComponent } from './other-sale/other-sale.component';
+import { SaleWithUsComponent } from './sale-with-us/sale-with-us.component';
 
 
 
@@ -25,8 +27,11 @@ const ROUTES: Routes = [
   {path:"faq",component:FaqComponent},
   {path:"privacy",component:PrivacyComponent},
   {path:"tnc",component:TncComponent},
+  {path:"other-sale",component:OtherSaleComponent},
+  {path:"sale-with-us",component:SaleWithUsComponent},
   {path:"return",component:ReturnComponent},
   {path:"category/:type",component:CategoryComponent},
+
   { path: '**', redirectTo: 'home' }
 ];
 

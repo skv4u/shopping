@@ -19,6 +19,8 @@ import { PrivacyComponent } from './privacy/privacy.component';
 import { TncComponent } from './tnc/tnc.component';
 import { ReturnComponent } from './return/return.component';
 import { CategoryComponent } from './category/category.component';
+import { OtherSaleComponent } from './other-sale/other-sale.component';
+import { SaleWithUsComponent } from './sale-with-us/sale-with-us.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { CategoryComponent } from './category/category.component';
     PrivacyComponent,
     TncComponent,
     ReturnComponent,
-    CategoryComponent
+    CategoryComponent,
+    OtherSaleComponent,
+    SaleWithUsComponent
   ],
   imports: [
     BrowserModule,
